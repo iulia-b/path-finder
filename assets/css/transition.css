@@ -1,0 +1,7 @@
+.transition-content {
+    transition: opacity 0.4s ease;
+    opacity: 1;
+}
+.transition-content.hide {
+    opacity: 0;
+}
