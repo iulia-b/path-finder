@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PathFinder - Career Guidance for Students</title>
+    <title data-translate="home.title">PathFinder - Consiliere profesională pentru elevi</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/language.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Navigation -->
@@ -15,11 +16,29 @@
                     <a href="index.html" class="text-xl font-bold text-blue-600">PathFinder</a>
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-                    <a href="mentors.html" class="text-gray-700 hover:text-blue-600 font-medium">Mentors</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.home">Acasă</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.about">Despre noi</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.services">Servicii</a>
+                    <a href="mentors.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.mentors">Mentori</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.contact">Contact</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative inline-block text-left">
+                        <div>
+                            <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50" id="language-selector" onclick="toggleLanguageDropdown()">
+                                RO
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="origin-top-right absolute right-0 mt-2 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="language-dropdown">
+                            <div class="py-1">
+                                <button onclick="switchLanguage('ro')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" id="lang-ro">RO</button>
+                                <button onclick="switchLanguage('en')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" id="lang-en">EN</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,18 +49,18 @@
         <div class="bg-gradient-to-br from-blue-600 to-purple-700 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div class="text-center">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                        Find Your Path to Success
+                    <h1 class="text-3xl md:text-5xl font-bold mb-6" data-translate="home.hero.headline">
+                        Descoperă drumul tău profesional cu sprijinul unei echipe de mentori de succes.
                     </h1>
-                    <p class="text-xl md:text-2xl mb-8 text-blue-100">
-                        Professional orientation and guidance for students
+                    <p class="text-lg md:text-xl mb-8 text-blue-100 max-w-4xl mx-auto" data-translate="home.hero.subtitle">
+                        Sunt Anca Grecu, consilier vocațional cu peste 10 ani de experiență în educație. Împreună cu o echipă de profesioniști din domenii diverse, îi ajutăm pe elevi să afle ce li se potrivește și să facă primii pași siguri către o carieră de succes.
                     </p>
                     <div class="space-x-4">
-                        <a href="services.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition duration-300">
-                            Our Services
+                        <a href="services.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition duration-300" data-translate="home.hero.cta">
+                            Vezi pachetele de consiliere
                         </a>
-                        <a href="mentors.html" class="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition duration-300">
-                            Meet Our Mentors
+                        <a href="mentors.html" class="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition duration-300" data-translate="home.hero.cta2">
+                            Întâlnește mentorii
                         </a>
                     </div>
                 </div>
@@ -52,8 +71,8 @@
         <div class="py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Why Choose PathFinder?</h2>
-                    <p class="mt-4 text-xl text-gray-600">We help students discover their potential and plan their future</p>
+                    <h2 class="text-3xl font-bold text-gray-900" data-translate="home.features.title">De ce să alegi PathFinder?</h2>
+                    <p class="mt-4 text-xl text-gray-600" data-translate="home.features.subtitle">Te ajutăm să-ți descoperi potențialul și să-ți planifici viitorul</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center">
@@ -62,8 +81,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Expert Guidance</h3>
-                        <p class="text-gray-600">Professional mentors with industry experience</p>
+                        <h3 class="text-xl font-semibold mb-2" data-translate="home.feature1.title">Ghidaj Expert</h3>
+                        <p class="text-gray-600" data-translate="home.feature1.desc">Mentori profesioniști cu experiență în industrie</p>
                     </div>
                     <div class="text-center">
                         <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -71,8 +90,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Personalized Approach</h3>
-                        <p class="text-gray-600">Tailored advice based on your interests and skills</p>
+                        <h3 class="text-xl font-semibold mb-2" data-translate="home.feature2.title">Abordare Personalizată</h3>
+                        <p class="text-gray-600" data-translate="home.feature2.desc">Sfaturi adaptate în funcție de interesele și abilitățile tale</p>
                     </div>
                     <div class="text-center">
                         <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -80,8 +99,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Comprehensive Resources</h3>
-                        <p class="text-gray-600">Access to career information and educational pathways</p>
+                        <h3 class="text-xl font-semibold mb-2" data-translate="home.feature3.title">Resurse Complete</h3>
+                        <p class="text-gray-600" data-translate="home.feature3.desc">Acces la informații despre cariere și trasee educaționale</p>
                     </div>
                 </div>
             </div>
@@ -92,10 +111,27 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <p>&copy; 2024 PathFinder. All rights reserved.</p>
-                <p class="mt-2 text-gray-400">Helping students find their path to success</p>
+                <p data-translate="footer.copyright">&copy; 2024 PathFinder. Toate drepturile rezervate.</p>
+                <p class="mt-2 text-gray-400" data-translate="footer.tagline">Te ajutăm să-ți găsești drumul către succes</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('language-dropdown');
+            const selector = document.getElementById('language-selector');
+            
+            if (!dropdown.contains(event.target) && !selector.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
