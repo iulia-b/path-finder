@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - PathFinder</title>
+    <title data-translate="about.title">Despre noi - PathFinder</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/language.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Navigation -->
@@ -15,11 +16,29 @@
                     <a href="index.html" class="text-xl font-bold text-blue-600">PathFinder</a>
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                    <a href="about.html" class="text-blue-600 font-medium">About</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-                    <a href="mentors.html" class="text-gray-700 hover:text-blue-600 font-medium">Mentors</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.home">Acasă</a>
+                    <a href="about.html" class="text-blue-600 font-medium" data-translate="nav.about">Despre noi</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.services">Servicii</a>
+                    <a href="mentors.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.mentors">Mentori</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.contact">Contact</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative inline-block text-left">
+                        <div>
+                            <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50" id="language-selector" onclick="toggleLanguageDropdown()">
+                                RO
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="origin-top-right absolute right-0 mt-2 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="language-dropdown">
+                            <div class="py-1">
+                                <button onclick="switchLanguage('ro')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" id="lang-ro">RO</button>
+                                <button onclick="switchLanguage('en')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" id="lang-en">EN</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,8 +47,8 @@
     <!-- Header -->
     <div class="bg-blue-600 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-bold mb-4">About PathFinder</h1>
-            <p class="text-xl text-blue-100">Empowering students to make informed career decisions</p>
+            <h1 class="text-4xl font-bold mb-4" data-translate="about.header.title">Despre PathFinder</h1>
+            <p class="text-xl text-blue-100" data-translate="about.header.subtitle">Experiență educațională și puterea mentoratului</p>
         </div>
     </div>
 
@@ -38,60 +57,47 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="prose max-w-none">
                 <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        PathFinder is dedicated to providing comprehensive career guidance and professional orientation 
-                        for students at all educational levels. We believe that every student deserves access to quality 
-                        mentorship and the tools necessary to make informed decisions about their future.
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6" data-translate="about.mission.title">Experiența noastră</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-translate="about.mission.text">
+                        Am lucrat peste 10 ani în pedagogie, inclusiv ca director de liceu, și am văzut cât de mult contează ghidajul în momentele de decizie. Am creat acest program pentru ca elevii să aibă parte de claritate, susținere și exemple reale de succes.
                     </p>
                 </div>
 
                 <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">What We Do</h2>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Career Assessment</h3>
-                            <p class="text-gray-700">
-                                We help students understand their strengths, interests, and aptitudes through 
-                                comprehensive career assessments and personality evaluations.
-                            </p>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6" data-translate="about.team.title">Echipa noastră</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-translate="about.team.text">
+                        Nu sunt singură în acest demers: alături de mine este o echipă de oameni de succes din domenii variate – IT, medicină, business, artă și știință – care devin mentori și surse de inspirație pentru tineri.
+                    </p>
+                </div>
+
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6" data-translate="about.values.title">Valorile noastre</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate="about.value1">Încredere și autenticitate</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Educational Planning</h3>
-                            <p class="text-gray-700">
-                                Our experts provide guidance on course selection, university applications, 
-                                and educational pathways that align with career goals.
-                            </p>
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate="about.value2">Orientare practică, nu doar teorie</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Mentorship</h3>
-                            <p class="text-gray-700">
-                                Connect with experienced professionals who provide personalized guidance 
-                                and share real-world insights about various career paths.
-                            </p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Skill Development</h3>
-                            <p class="text-gray-700">
-                                Access resources and workshops to develop essential skills needed 
-                                for academic and professional success.
-                            </p>
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate="about.value3">Conectarea elevilor cu oameni care inspiră</h3>
                         </div>
                     </div>
-                </div>
-
-                <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        Founded with the vision of bridging the gap between education and career planning, 
-                        PathFinder emerged from the recognition that many students struggle with making 
-                        informed decisions about their academic and professional futures.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Our team of experienced educators, career counselors, and industry professionals 
-                        work together to provide holistic guidance that considers each student's unique 
-                        circumstances, aspirations, and potential.
-                    </p>
                 </div>
             </div>
         </div>
@@ -101,10 +107,27 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <p>&copy; 2024 PathFinder. All rights reserved.</p>
-                <p class="mt-2 text-gray-400">Helping students find their path to success</p>
+                <p data-translate="footer.copyright">&copy; 2024 PathFinder. Toate drepturile rezervate.</p>
+                <p class="mt-2 text-gray-400" data-translate="footer.tagline">Te ajutăm să-ți găsești drumul către succes</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('language-dropdown');
+            const selector = document.getElementById('language-selector');
+            
+            if (!dropdown.contains(event.target) && !selector.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
