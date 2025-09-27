@@ -10,7 +10,7 @@ const translations = {
         
         // Homepage
         'home.title': 'PathFinder - Consiliere profesională pentru elevi',
-        'home.hero.headline': 'Descoperă drumul tău profesional cu sprijinul unei echipe de mentori de succes.',
+        'home.hero.headline': 'Descoperă calea către succes.',
         'home.hero.subtitle': 'Sunt Anca Grecu, consilier vocațional cu peste 10 ani de experiență în educație. Împreună cu o echipă de profesioniști din domenii diverse, îi ajutăm pe elevi să afle ce li se potrivește și să facă primii pași siguri către o carieră de succes.',
         'home.hero.cta': 'Vezi pachetele de consiliere',
         'home.hero.cta2': 'Întâlnește mentorii',
@@ -88,7 +88,7 @@ const translations = {
         // Homepage
         'home.title': 'PathFinder - Career Guidance for Students',
         'home.hero.headline': 'Find Your Path to Success',
-        'home.hero.subtitle': 'Professional orientation and guidance for students with experienced mentors from diverse fields.',
+        'home.hero.subtitle': 'I am Anca Grecu, vocational counselor with over 10 years of experience in education. Together with a team of professional from various areas, we're helping student to find out what fits them and make their first steps towards a successful career',
         'home.hero.cta': 'Our Services',
         'home.hero.cta2': 'Meet Our Mentors',
         'home.features.title': 'Why Choose PathFinder?',
