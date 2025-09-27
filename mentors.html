@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentors - PathFinder</title>
+    <title data-translate="mentors.title">Mentori - PathFinder</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/language.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Navigation -->
@@ -15,11 +16,29 @@
                     <a href="index.html" class="text-xl font-bold text-blue-600">PathFinder</a>
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-                    <a href="mentors.html" class="text-blue-600 font-medium">Mentors</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.home">Acasă</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.about">Despre noi</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.services">Servicii</a>
+                    <a href="mentors.html" class="text-blue-600 font-medium" data-translate="nav.mentors">Mentori</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium" data-translate="nav.contact">Contact</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative inline-block text-left">
+                        <div>
+                            <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50" id="language-selector" onclick="toggleLanguageDropdown()">
+                                RO
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="origin-top-right absolute right-0 mt-2 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden" id="language-dropdown">
+                            <div class="py-1">
+                                <button onclick="switchLanguage('ro')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" id="lang-ro">RO</button>
+                                <button onclick="switchLanguage('en')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" id="lang-en">EN</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,189 +47,92 @@
     <!-- Header -->
     <div class="bg-blue-600 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-bold mb-4">Meet Our Mentors</h1>
-            <p class="text-xl text-blue-100">Experienced professionals ready to guide your journey</p>
+            <h1 class="text-4xl font-bold mb-4" data-translate="mentors.header.title">Inspirație din experiența reală</h1>
+            <p class="text-xl text-blue-100" data-translate="mentors.header.subtitle">Elevii pot interacționa cu mentori din domenii variate</p>
         </div>
     </div>
 
-    <!-- Mentors Grid -->
+    <!-- Mentors Categories -->
     <main class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Mentor 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
+            <!-- Domain Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- IT & Technology -->
+                <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg p-8 text-white hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Maria Popescu</h3>
-                        <p class="text-blue-600 font-medium mb-3">Software Engineer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            10+ years experience in software development at major tech companies. 
-                            Specializes in computer science education paths and tech career guidance.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Technology</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Programming</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Career Development</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-translate="mentors.it.title">IT & Tehnologie</h3>
+                    <p class="text-blue-100 text-center" data-translate="mentors.it.desc">Experți în software și startup-uri</p>
                 </div>
 
-                <!-- Mentor 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
+                <!-- Medicine & Sciences -->
+                <div class="bg-gradient-to-br from-green-500 to-green-700 rounded-lg p-8 text-white hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Dr. Alexandru Ionescu</h3>
-                        <p class="text-blue-600 font-medium mb-3">Medical Doctor</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Practicing physician with 15 years of experience. Mentor for students 
-                            interested in medical careers and healthcare professions.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">Medicine</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Healthcare</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Research</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-translate="mentors.medicine.title">Medicină & Științe</h3>
+                    <p class="text-green-100 text-center" data-translate="mentors.medicine.desc">Medici și cercetători dedicați</p>
                 </div>
 
-                <!-- Mentor 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
+                <!-- Business & Management -->
+                <div class="bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg p-8 text-white hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Elena Radulescu</h3>
-                        <p class="text-blue-600 font-medium mb-3">Marketing Director</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Creative marketing professional with expertise in digital marketing, 
-                            brand strategy, and business development.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded-full text-xs">Marketing</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Business</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Strategy</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-translate="mentors.business.title">Business & Management</h3>
+                    <p class="text-purple-100 text-center" data-translate="mentors.business.desc">Antreprenori și manageri cu experiență</p>
                 </div>
 
-                <!-- Mentor 4 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
+                <!-- Arts & Creativity -->
+                <div class="bg-gradient-to-br from-orange-500 to-orange-700 rounded-lg p-8 text-white hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                        </svg>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Prof. Mihai Constantinescu</h3>
-                        <p class="text-blue-600 font-medium mb-3">University Professor</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Professor of Engineering with 20+ years in academia. Expert in 
-                            educational pathways and academic career planning.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Engineering</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Education</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Research</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mentor 5 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Ana Marinescu</h3>
-                        <p class="text-blue-600 font-medium mb-3">Financial Analyst</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Finance professional with expertise in investment banking, 
-                            financial planning, and economic analysis.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs">Finance</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Banking</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Economics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mentor 6 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-gradient-to-br from-indigo-400 to-purple-600 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Radu Petrescu</h3>
-                        <p class="text-blue-600 font-medium mb-3">Entrepreneur</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Serial entrepreneur and startup mentor. Experienced in business 
-                            development, innovation, and entrepreneurial ventures.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">Entrepreneurship</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Startups</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Innovation</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-translate="mentors.arts.title">Artă & Creativitate</h3>
+                    <p class="text-orange-100 text-center" data-translate="mentors.arts.desc">Artiști și creatori care au transformat pasiunea în carieră</p>
                 </div>
             </div>
 
-            <!-- How it Works -->
-            <div class="bg-gray-100 rounded-lg p-8">
-                <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">How Mentorship Works</h2>
+            <!-- How It Works Section -->
+            <div class="bg-gray-50 rounded-lg p-8 mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-translate="mentors.process.title">Cum funcționează?</h2>
+                </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center">
                         <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-white font-bold text-lg">1</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-2">Choose Your Mentor</h3>
-                        <p class="text-gray-600">Select a mentor based on your interests and career goals</p>
+                        <h3 class="text-lg font-semibold mb-2" data-translate="mentors.step1">Alege un mentor</h3>
+                        <p class="text-gray-600">Selectează domeniul de interes și găsește mentorul potrivit</p>
                     </div>
                     <div class="text-center">
                         <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-white font-bold text-lg">2</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-2">Schedule Sessions</h3>
-                        <p class="text-gray-600">Book one-on-one sessions at your convenience</p>
+                        <h3 class="text-lg font-semibold mb-2" data-translate="mentors.step2">Programează sesiuni</h3>
+                        <p class="text-gray-600">Rezervă întâlniri online la momentul potrivit pentru tine</p>
                     </div>
                     <div class="text-center">
                         <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-white font-bold text-lg">3</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-2">Get Guidance</h3>
-                        <p class="text-gray-600">Receive personalized advice and career insights</p>
+                        <h3 class="text-lg font-semibold mb-2" data-translate="mentors.step3">Primește ghidaj</h3>
+                        <p class="text-gray-600">Beneficiază de sfaturi personalizate și experiențe reale</p>
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300">
-                        Start Your Mentorship Journey
+                    <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300" data-translate="mentors.cta">
+                        Începe să lucrezi cu un mentor
                     </a>
                 </div>
             </div>
@@ -221,10 +143,27 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <p>&copy; 2024 PathFinder. All rights reserved.</p>
-                <p class="mt-2 text-gray-400">Helping students find their path to success</p>
+                <p data-translate="footer.copyright">&copy; 2024 PathFinder. Toate drepturile rezervate.</p>
+                <p class="mt-2 text-gray-400" data-translate="footer.tagline">Te ajutăm să-ți găsești drumul către succes</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('language-dropdown');
+            const selector = document.getElementById('language-selector');
+            
+            if (!dropdown.contains(event.target) && !selector.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
